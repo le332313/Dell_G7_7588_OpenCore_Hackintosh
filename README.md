@@ -9,7 +9,7 @@ EFI folder can be used both for USB Installer and booting.
   - Display: 1080p
   - SSD: 
       * M.2 SATA Kingston SM2280S3G2120G 120Gb for macOS
-      * SATAIII Crucial CT500MX500SSD1 500Gb for Windows 10 and DATAs
+      * 2.5 inch SATAIII Crucial CT500MX500SSD1 500Gb for Windows 10 and DATAs
   - Sound: ALC256
   - Wireless + Bluetooth: Intel AC 9560
   - VGA: Nvidia GTX 1050Ti (disabled)
