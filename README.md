@@ -1,6 +1,7 @@
 # Dell_G7_7588_OpenCore_Hackintosh
 ## Overview
 - Lastest macOS Catalina 10.15.6 on a Dell Inspiron G7 7588.
+- Bootloader: OpenCore 0.6.1
 - EFI folder can be used both for USB Installer and booting.
 ## Hardware configuration
 * Dell G7 7588
