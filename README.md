@@ -52,7 +52,7 @@ Also there is a rename BRT6 to BRTX in `ACPI/Patch`.
   * Replace: 14204252 545802
   
 ## Wi-Fi and Bluetooth
-- I'm still using the original wireless card Intel AC 9560 because almost Broadcom cards are expensive now (´・ω・｀).
+- I'm still using the original wireless card Intel AC 9560 because Broadcom cards are expensive now (´・ω・｀).
 - Intel card now can work well with [OpenIntelWireless](https://github.com/OpenIntelWireless) repo. The speed is not good as Windows 10, but you can watch 1080p Youtube normally or download stuffs, etc...
 - For Intel AC 9560, use `itlwm.kext`, `IntelBluetoothFirmware.kext` and `IntelBluetoothInjector.kext`. Put them in /EFI/OC/Kexts.
 Note: These are for wifi and bluetooth only. AirPlay is also worked. There are NO Airdrop and Handoff!
