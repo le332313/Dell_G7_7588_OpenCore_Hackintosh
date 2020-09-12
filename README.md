@@ -81,21 +81,23 @@ For me, I used `VoodooI2C.kext`, `VoodooI2CHID.kext`, `VoodooPS2Controller.kext`
 
 ## Sleep/Wake Enhances
 Only run these commands in Terminal and done:
+  ```
   * sudo pmset autopoweroff 0 
   * sudo pmset powernap 0 
   * sudo pmset standby 0
   * sudo pmset proximitywake 0
+  ```
 
-# System Integrity Protection (SIP)
+## System Integrity Protection (SIP)
 - I totally disabled it with `csr-active-config = <FF070000>`. If you want to enable it, change the value to `00000000`.
 
-# CFG-Unlock
+## CFG-Unlock
 * Run `modGRUBShell.efi` at OpenCore picker.
 * When `> grub` show up, type `setup_var 0x5BD 0x00` and hit Enter.
 * The screen will show `setting offset 0x5bd to 0x00`, that done. Now you can change both `AppleCpuPmCfgLock` and `AppleXcpmCfgLock` in Kernel/Quirks to `True` to `False`.
 credit: [Juan-VC](https://juan-vc.github.io/oc-g7-guide/post-installation/disable-cfg-lock.html).
 
-# Credit
+## Credit
 * Apple for macOS
 * Acidanthera team
 * Dortania team
