@@ -4,16 +4,16 @@ Lastest macOS Catalina 10.15.6 on a Dell Inspiron G7 7588.
 EFI folder can be used both for USB Installer and booting.
 ## Hardware configuration
 * Dell G7 7588
-  CPU: i7-8750H
-  RAM: 16Gb 2x DDR4 (upgraded)
-  Display: 1080p
-  SSD: 
-  - M.2 SATA Kingston SM2280S3G2120G 120Gb for macOS
-  - SATAIII Crucial CT500MX500SSD1 500Gb for Windows 10 and DATAs
-  Sound: ALC256
-  Wireless + Bluetooth: Intel AC 9560
-  VGA: Nvidia GTX 1050Ti (disabled)
-  BIOS: 1.14.0 (latest)
+  - CPU: i7-8750H
+  - RAM: 16Gb 2x DDR4 (upgraded)
+  - Display: 1080p
+  - SSD: 
+      * M.2 SATA Kingston SM2280S3G2120G 120Gb for macOS
+      * SATAIII Crucial CT500MX500SSD1 500Gb for Windows 10 and DATAs
+  - Sound: ALC256
+  - Wireless + Bluetooth: Intel AC 9560
+  - VGA: Nvidia GTX 1050Ti (disabled)
+  - BIOS: 1.14.0 (latest)
   
 ## Graphics
 Integrated Intel UHD Graphics 630 support is handled by WhateverGreen, and configured in the `PciRoot(0x0)/Pci(0x2,0x0)` section of `config.plist`.
