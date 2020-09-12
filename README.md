@@ -1,0 +1,1 @@
+# Dell_G7_7588_OpenCore_Hackintosh
