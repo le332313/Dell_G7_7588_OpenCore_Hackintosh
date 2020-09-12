@@ -59,7 +59,8 @@ Note: These are for wifi and bluetooth only. AirPlay is also worked. There are N
 
 ## iMessages and Facetime
 Follow [this guide](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html) from Dortania.
-Make sure you have to change the ROM in `PlatformInfo/Generic/ROM`
+- Make sure you have to change the ROM in `PlatformInfo/Generic/ROM`.
+- Also I highly recommend you should get a new valid serial number and other SMBIOS related data for iMessage/Facetime to work. You can use [Corpnewt's GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
 
 ## Battery
 Install **SMCBatteryManager.kext** plugin which comes with **VirtualSMC** to get battery status.
