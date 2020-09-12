@@ -69,7 +69,7 @@ Install **SMCBatteryManager.kext** plugin which comes with **VirtualSMC** to get
 ## Audio
 - For ALC256, I use layout-id = <21>. This id can give you 3.5mm headphone jack (just headphone!).
 - For fixing headset jack, run the `install.sh` in `ComboJack_Lastest` folder. You can use both internal and external microphone.
-* credit: [Ivs1974](https://github.com/lvs1974/ComboJack)
+- credit: [Ivs1974](https://github.com/lvs1974/ComboJack)
 
 ## Thunderbolt 3
 - Thunderbolt device will work in macOS when attached prior to boot, but will lose functionality when hotplugged. So make sure you have to plug it first, then power on the laptop and boot into macOS, it will work!
