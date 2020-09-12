@@ -97,6 +97,9 @@ Only run these commands in Terminal and done:
 * The screen will show `setting offset 0x5bd to 0x00`, that done. Now you can change both `AppleCpuPmCfgLock` and `AppleXcpmCfgLock` in Kernel/Quirks from `True` to `False`.
 * credit: [Juan-VC](https://juan-vc.github.io/oc-g7-guide/post-installation/disable-cfg-lock.html).
 
+## Enable HiDPI
+* Run `install.command` in `HiDPI` folder, then reboot.
+
 ## Credit
 * Apple for macOS
 * Acidanthera team
