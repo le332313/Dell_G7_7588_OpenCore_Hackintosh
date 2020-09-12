@@ -22,7 +22,7 @@ The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need 
 ### Enabling acceleration
 * [config.plist](https://github.com/sn0wfL4ke98/Dell_G7_7588_OpenCore_Hackintosh/blob/master/EFI/OC/config.plist)
   * `DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)`
-    * `AAPL,ig-platform-id = <00009b3e>
+    * `AAPL,ig-platform-id = <00009b3e>`
 ### Enabling external display support
 * [config.plist](https://github.com/sn0wfL4ke98/Dell_G7_7588_OpenCore_Hackintosh/blob/master/EFI/OC/config.plist)
   * Boot Arguments
