@@ -111,4 +111,4 @@ Only run these commands in Terminal and done:
 * Juan-VC for CFG-Unlock
 
 ## Support
-* Support me to buy a coffee or a new Broadcom wireless card (´・ω・｀): [Paypal](paypal.me/tekun0lxrd)
+* Support me to buy a coffee or a new Broadcom wireless card (´・ω・｀): [Paypal](https://www.paypal.me/tekun0lxrd)
