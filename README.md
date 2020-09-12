@@ -65,7 +65,7 @@ Make sure you have to change the ROM in `PlatformInfo/Generic/ROM`
 Install **SMCBatteryManager.kext** plugin which comes with **VirtualSMC** to get battery status.
 
 ## Audio
-- For ALC256, I use layout-id=21. This id can give you native 3.5mm headphone jack (just headphone!).
+- For ALC256, I use layout-id = <21>. This id can give you native 3.5mm headphone jack (just headphone!).
 - For fixing headset jack, run the `install.sh` in `ComboJack_Lastest` folder. You can use both internal and external microphone.
 * credit: [Ivs1974](https://github.com/lvs1974/ComboJack)
 
