@@ -109,3 +109,6 @@ Only run these commands in Terminal and done:
 * Rehabman
 * Ivs1974 for ComboJack Fix
 * Juan-VC for CFG-Unlock
+
+## Support
+* Support me to buy a coffee or a new broadcom wireless card (´・ω・｀): [Paypal](paypal.me/tekun0lxrd)
