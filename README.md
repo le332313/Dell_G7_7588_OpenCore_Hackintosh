@@ -14,7 +14,7 @@ EFI folder can be used both for USB Installer and booting.
   Wireless + Bluetooth: Intel AC 9560
   VGA: Nvidia GTX 1050Ti (disabled)
   BIOS: 1.14.0 (latest)
-# Hardware
+  
 ## Graphics
 Integrated Intel UHD Graphics 630 support is handled by WhateverGreen, and configured in the `PciRoot(0x0)/Pci(0x2,0x0)` section of `config.plist`.
 The Nvidia GPU is not supported so it is disabled to using `SSDT-DDGPU.aml`.
@@ -52,34 +52,34 @@ Also there is a rename BRT6 to BRTX in `ACPI/Patch`.
   * Replace: 14204252 545802
   
 ## Wi-Fi and Bluetooth
-I'm still using the original wireless card Intel AC 9560 because almost Broadcom cards are expensive now (´・ω・｀).
-Intel card now can work well with [OpenIntelWireless](https://github.com/OpenIntelWireless) repo. The speed is not good as Windows 10, but you can watch 1080p Youtube normally or download stuffs, etc...
-For Intel AC 9560, use `itlwm.kext`, `IntelBluetoothFirmware.kext` and `IntelBluetoothInjector.kext`. Put them in /EFI/OC/Kexts.
+- I'm still using the original wireless card Intel AC 9560 because almost Broadcom cards are expensive now (´・ω・｀).
+- Intel card now can work well with [OpenIntelWireless](https://github.com/OpenIntelWireless) repo. The speed is not good as Windows 10, but you can watch 1080p Youtube normally or download stuffs, etc...
+- For Intel AC 9560, use `itlwm.kext`, `IntelBluetoothFirmware.kext` and `IntelBluetoothInjector.kext`. Put them in /EFI/OC/Kexts.
 Note: These are for wifi and bluetooth only. AirPlay is also worked. There are NO Airdrop and Handoff!
 
-# iMessages and Facetime
+## iMessages and Facetime
 Follow [this guide](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html) from Dortania.
 Make sure you have to change the ROM in `PlatformInfo/Generic/ROM`
 
-# Battery
+## Battery
 Install **SMCBatteryManager.kext** plugin which comes with **VirtualSMC** to get battery status.
 
-# Audio
-For ALC256, I use layout-id=21. This id can give you native 3.5mm headphone jack (just headphone!)
-For fixing headset jack, run the `install.sh` in `ComboJack_Lastest` folder. You can use both internal and external microphone.
+## Audio
+- For ALC256, I use layout-id=21. This id can give you native 3.5mm headphone jack (just headphone!).
+- For fixing headset jack, run the `install.sh` in `ComboJack_Lastest` folder. You can use both internal and external microphone.
 credit: [Ivs1974](https://github.com/lvs1974/ComboJack)
 
-# Thunderbolt 3
-Thunderbolt device will work in macOS when attached prior to boot, but will lose functionality when hotplugged. So make sure you have to plug it first, then power on the laptop and boot into macOS, it will work!
+## Thunderbolt 3
+- Thunderbolt device will work in macOS when attached prior to boot, but will lose functionality when hotplugged. So make sure you have to plug it first, then power on the laptop and boot into macOS, it will work!
 
-# Touch ID/Goodix Fingerprint Sensor
+## Touch ID/Goodix Fingerprint Sensor
 Since I'm using the `MacBookPro15,1` SMBIOS, macOS is expecting Touch ID to be available, causing lag on password prompts. So it can be disabled using `NoTouchID.kext`.
 
 ## Trackpad
-The trackpad is from Synaptics, also is I2C device. So it can be driven with VoodooI2C. VoodooPS2Controller also provides basic trackpad support.
+- The trackpad is from Synaptics, also is I2C device. So it can be driven with VoodooI2C. VoodooPS2Controller also provides basic trackpad support.
 For me, I used `VoodooI2C.kext`, `VoodooI2CHID.kext`, `VoodooPS2Controller.kext` and `VoodooInput.kext`.
 
-# Sleep/Wake Enhances
+## Sleep/Wake Enhances
 Only run these commands in Terminal and done:
   * sudo pmset autopoweroff 0 
   * sudo pmset powernap 0 
@@ -87,7 +87,7 @@ Only run these commands in Terminal and done:
   * sudo pmset proximitywake 0
 
 # System Integrity Protection (SIP)
-I totally disabled it with `csr-active-config = <FF070000>`. If you want to enable it, change the value to `00000000`.
+- I totally disabled it with `csr-active-config = <FF070000>`. If you want to enable it, change the value to `00000000`.
 
 # CFG-Unlock
 * Run `modGRUBShell.efi` at OpenCore picker.
