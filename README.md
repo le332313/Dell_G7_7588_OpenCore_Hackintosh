@@ -67,7 +67,7 @@ Install **SMCBatteryManager.kext** plugin which comes with **VirtualSMC** to get
 ## Audio
 - For ALC256, I use layout-id=21. This id can give you native 3.5mm headphone jack (just headphone!).
 - For fixing headset jack, run the `install.sh` in `ComboJack_Lastest` folder. You can use both internal and external microphone.
-credit: [Ivs1974](https://github.com/lvs1974/ComboJack)
+* credit: [Ivs1974](https://github.com/lvs1974/ComboJack)
 
 ## Thunderbolt 3
 - Thunderbolt device will work in macOS when attached prior to boot, but will lose functionality when hotplugged. So make sure you have to plug it first, then power on the laptop and boot into macOS, it will work!
@@ -95,7 +95,7 @@ Only run these commands in Terminal and done:
 * Run `modGRUBShell.efi` at OpenCore picker.
 * When `> grub` show up, type `setup_var 0x5BD 0x00` and hit Enter.
 * The screen will show `setting offset 0x5bd to 0x00`, that done. Now you can change both `AppleCpuPmCfgLock` and `AppleXcpmCfgLock` in Kernel/Quirks to `True` to `False`.
-credit: [Juan-VC](https://juan-vc.github.io/oc-g7-guide/post-installation/disable-cfg-lock.html).
+* credit: [Juan-VC](https://juan-vc.github.io/oc-g7-guide/post-installation/disable-cfg-lock.html).
 
 ## Credit
 * Apple for macOS
