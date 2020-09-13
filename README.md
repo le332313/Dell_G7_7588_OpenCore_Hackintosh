@@ -110,6 +110,7 @@ Only run these commands in Terminal and done:
 * Rehabman
 * Ivs1974 for ComboJack Fix
 * Juan-VC for CFG-Unlock
+* xzhih for HiDPI
 
 ## Support
 * Support me to buy a coffee or a new Broadcom wireless card (´・ω・｀): [Paypal](https://www.paypal.me/tekun0lxrd)
