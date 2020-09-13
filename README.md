@@ -100,7 +100,8 @@ Only run these commands in Terminal and done:
 * credit: [Juan-VC](https://juan-vc.github.io/oc-g7-guide/post-installation/disable-cfg-lock.html).
 
 ## Enable HiDPI
-* Run `install.command` in `HiDPI` folder, then reboot.
+* Double click `hidpi.command` to run, then reboot.
+* credit: [xzhih](https://github.com/xzhih/one-key-hidpi)
 
 ## Credit
 * Apple for macOS
