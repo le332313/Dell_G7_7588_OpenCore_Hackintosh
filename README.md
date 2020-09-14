@@ -100,7 +100,8 @@ Only run these commands in Terminal and done:
 * credit: [Juan-VC](https://juan-vc.github.io/oc-g7-guide/post-installation/disable-cfg-lock.html).
 
 ## Enable HiDPI
-* Run `install.command` in `HiDPI` folder, then reboot.
+* Double click `hidpi.command` to run, then reboot.
+* credit: [xzhih](https://github.com/xzhih/one-key-hidpi)
 
 ## Credit
 * Apple for macOS
@@ -109,6 +110,7 @@ Only run these commands in Terminal and done:
 * Rehabman
 * Ivs1974 for ComboJack Fix
 * Juan-VC for CFG-Unlock
+* xzhih for HiDPI
 
 ## Support
 * Support me to buy a coffee or a new Broadcom wireless card (´・ω・｀): [Paypal](https://www.paypal.me/tekun0lxrd)
