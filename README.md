@@ -1,6 +1,7 @@
 # Dell_G7_7588_OpenCore_Hackintosh
 ## Overview
-- Lastest macOS Catalina 10.15.6 on a Dell Inspiron G7 7588.
+- Great new: Now you can use my EFI folder for upgrading from Catalina to Big Sur
+- ~~Lastest macOS Catalina 10.15.6~~ Now it can run macOS Big Sur smoothy ᕦʕ •ᴥ•ʔᕤ
 - Bootloader: OpenCore 0.6.1
 - EFI folder can be used both for USB Installer and booting.
 ## Hardware configuration
