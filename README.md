@@ -85,10 +85,10 @@ For me, I used `VoodooI2C.kext`, `VoodooI2CHID.kext`, `VoodooPS2Controller.kext`
 ## Sleep/Wake Enhances
 Only run these commands in Terminal and done:
   ```
-  * sudo pmset autopoweroff 0 
-  * sudo pmset powernap 0 
-  * sudo pmset standby 0
-  * sudo pmset proximitywake 0
+  sudo pmset autopoweroff 0 
+  sudo pmset powernap 0 
+  sudo pmset standby 0
+  sudo pmset proximitywake 0
   ```
 
 ## System Integrity Protection (SIP)
