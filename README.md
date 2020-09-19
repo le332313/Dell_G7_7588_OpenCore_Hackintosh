@@ -13,7 +13,7 @@
       * M.2 SATA Kingston SM2280S3G2120G 120Gb for macOS
       * 2.5 inch SATAIII Crucial CT500MX500SSD1 500Gb for Windows 10 and DATAs
   - Sound: ALC256
-  - Wireless + Bluetooth: Intel AC 9560
+  - Wireless + Bluetooth: ~~Intel AC 9560~~ Replaced with BCM94352z aka DW1560 ʕ •ᴥ•ʔゝ☆
   - VGA: Nvidia GTX 1050Ti (disabled)
   - BIOS: 1.14.0 (latest)
   
@@ -54,10 +54,10 @@ Also there is a rename BRT6 to BRTX in `ACPI/Patch`.
   * Replace: 14204252 545802
   
 ## Wi-Fi and Bluetooth
-- I'm still using the original wireless card Intel AC 9560 because Broadcom cards are expensive now (´・ω・｀).
-- Intel card now can work well with [OpenIntelWireless](https://github.com/OpenIntelWireless) repo. The speed is not good as Windows 10, but you can watch 1080p Youtube normally or download stuffs, etc...
-- For Intel AC 9560, use `itlwm.kext`, `IntelBluetoothFirmware.kext` and `IntelBluetoothInjector.kext`. Put them in /EFI/OC/Kexts.
-Note: These are for wifi and bluetooth only. AirPlay is also worked. There are NO Airdrop and Handoff!
+- ~~I'm still using the original wireless card Intel AC 9560 because Broadcom cards are expensive now (´・ω・｀).~~ I bought a cheap BCM94352z and now it's worked very good
+- For somebody who is using Intel card, it can worked well with [OpenIntelWireless](https://github.com/OpenIntelWireless) repo. The speed is not good as Windows 10, but you can watch 1080p Youtube normally or download stuffs, etc...
+- Download `itlwm.kext`, `IntelBluetoothFirmware.kext` and `IntelBluetoothInjector.kext`. Put them in /EFI/OC/Kexts then reboot. Then use `Heliport` app for using wifi GUI.
+~~Note: These are for wifi and bluetooth only. AirPlay is also worked. There are NO Airdrop and Handoff!~~ New beta kext `AirportItlwm` just released and now Airdrop and Handoff are available. But because it's still beta so I don't recommend it.
 
 ## iMessages and Facetime
 Follow [this guide](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html) from Dortania.
@@ -85,8 +85,8 @@ For me, I used `VoodooI2C.kext`, `VoodooI2CHID.kext`, `VoodooPS2Controller.kext`
 ## Sleep/Wake Enhances
 Only run these commands in Terminal and done:
   ```
-  sudo pmset autopoweroff 0 
-  sudo pmset powernap 0 
+  sudo pmset autopoweroff 0
+  sudo pmset powernap 0
   sudo pmset standby 0
   sudo pmset proximitywake 0
   ```
