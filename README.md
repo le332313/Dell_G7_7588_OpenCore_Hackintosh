@@ -95,13 +95,13 @@ Only run these commands in Terminal and done:
 ## System Integrity Protection (SIP)
 - I totally disabled it with `csr-active-config = <FF070000>`. If you want to enable it, change the value to `00000000`.
 
-## CFG-Unlock
+## CFG-Unlock (Recommended but not highly recommended)
 * Run `modGRUBShell.efi` at OpenCore picker.
 * When `> grub` show up, type `setup_var 0x5BD 0x00` and hit Enter.
 * The screen will show `setting offset 0x5bd to 0x00`, that done. Now you can change both `AppleCpuPmCfgLock` and `AppleXcpmCfgLock` in Kernel/Quirks from `True` to `False`.
 * credit: [Juan-VC](https://juan-vc.github.io/oc-g7-guide/post-installation/disable-cfg-lock.html).
 
-## Enable HiDPI
+## Enable HiDPI (Optional)
 * Double click `hidpi.command` to run, then reboot.
 * credit: [xzhih](https://github.com/xzhih/one-key-hidpi)
 
