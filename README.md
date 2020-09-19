@@ -80,7 +80,7 @@ Since I'm using the `MacBookPro15,1` SMBIOS, macOS is expecting Touch ID to be a
 
 ## Trackpad
 - The trackpad is from Synaptics, also is I2C device. So it can be driven with VoodooI2C. VoodooPS2Controller also provides basic trackpad support.
-For me, I used `VoodooI2C.kext`, `VoodooI2CHID.kext`, `VoodooPS2Controller.kext` and `VoodooInput.kext`.
+For me, I used `VoodooI2C.kext`, `VoodooI2CHID.kext` and `VoodooPS2Controller.kext`.
 
 ## Sleep/Wake Enhances
 Only run these commands in Terminal and done:
@@ -114,4 +114,4 @@ Only run these commands in Terminal and done:
 * xzhih for HiDPI
 
 ## Support
-* Support me to buy a coffee or a new Broadcom wireless card (´・ω・｀): [Paypal](https://www.paypal.me/tekun0lxrd)
+* Support me to buy pho and a coffee for every morning ~~or a new Broadcom wireless card~~ (´・ω・｀): [Paypal](https://www.paypal.me/tekun0lxrd)
