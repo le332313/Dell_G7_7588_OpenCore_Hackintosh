@@ -65,7 +65,7 @@ Follow [this guide](https://dortania.github.io/OpenCore-Post-Install/universal/i
 - Make sure you have to change the ROM in `PlatformInfo/Generic/ROM`.
 - Also I highly recommend you should get a new valid serial number and other SMBIOS related data for iMessage/Facetime to work. You can use [Corpnewt's GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
 
-# USB Mapping
+## USB Mapping
 Follow [this guide](https://www.tonymacx86.com/threads/the-new-beginners-guide-to-usb-port-configuration.286553/). Then you can set `XhciPortLimit` from `TRUE` to `FALSE`.
 ## Battery
 Install **SMCBatteryManager.kext** plugin which comes with **VirtualSMC** to get battery status.
