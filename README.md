@@ -30,6 +30,7 @@ The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need 
   * Boot Arguments
     * `agdpmod=vit9696`
   * `DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)`
+    * `framebuffer-patch-enable = <01000000>`
     * `framebuffer-portcount = <04000000>`
     * `framebuffer-con1-enable = <01000000>`
     * `framebuffer-con1-alldata = <01050900 00040000 87010000>`
