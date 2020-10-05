@@ -2,7 +2,7 @@
 ## Overview
 - Great new: Now you can use my EFI folder for upgrading from Catalina to Big Sur
 - Lastest macOS Catalina 10.15.6
-- Bootloader: OpenCore 0.6.1
+- Bootloader: OpenCore 0.6.2
 - EFI folder can be used both for USB Installer and booting.
 ## Hardware configuration
 * Dell G7 7588
@@ -13,7 +13,7 @@
       * M.2 SATA Kingston SM2280S3G2120G 120Gb for macOS
       * 2.5 inch SATAIII Crucial CT500MX500SSD1 500Gb for Windows 10 and DATAs
   - Sound: ALC256
-  - Wireless + Bluetooth: ~~Intel AC 9560~~ Replaced with BCM94352z aka DW1560 ʕ •ᴥ•ʔゝ☆
+  - Wireless + Bluetooth: Replaced with BCM94352Z aka DW1560 ʕ •ᴥ•ʔゝ☆
   - VGA: Nvidia GTX 1050Ti (disabled)
   - BIOS: 1.14.0 (latest)
   
@@ -53,23 +53,11 @@ Also there is a rename BRT6 to BRTX in `ACPI/Patch`.
   * Enable: Yes
   * Find: 14204252 543602
   * Replace: 14204252 545802
-  
-## Wi-Fi and Bluetooth
-~~- I'm still using the original wireless card Intel AC 9560 because Broadcom cards are expensive now (´・ω・｀).~~
-- I just bought a cheap BCM94352z and now it's worked very good
-- For somebody who is using Intel card, it can worked well with [OpenIntelWireless](https://github.com/OpenIntelWireless) repo. The speed is not good as Windows 10, but you can watch 1080p Youtube normally or download stuffs, etc...
-- Download `itlwm.kext`, `IntelBluetoothFirmware.kext` and `IntelBluetoothInjector.kext`. Put them in /EFI/OC/Kexts then reboot. Then use `Heliport` app for using wifi GUI.
-- ~~Note: These are for wifi and bluetooth only. AirPlay is also worked. There are NO Airdrop and Handoff!~~ New beta kext `AirportItlwm` just released and now Airdrop and Handoff are available. But because it's still beta so I don't recommend it.
 
 ## iMessages and Facetime
 Follow [this guide](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html) from Dortania.
 - Make sure you have to change the ROM in `PlatformInfo/Generic/ROM`.
 - Also I highly recommend you should get a new valid serial number and other SMBIOS related data for iMessage/Facetime to work. You can use [Corpnewt's GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
-
-## USB Mapping
-Follow [this guide](https://www.tonymacx86.com/threads/the-new-beginners-guide-to-usb-port-configuration.286553/). Then you can set `XhciPortLimit` from `TRUE` to `FALSE`.
-## Battery
-Install **SMCBatteryManager.kext** plugin which comes with **VirtualSMC** to get battery status.
 
 ## Audio
 - For ALC256, I use layout-id = <21>. This id can give you 3.5mm headphone jack (just headphone!).
@@ -96,7 +84,10 @@ Only run these commands in Terminal and done:
   ```
 
 ## System Integrity Protection (SIP)
-- I totally disabled it with `csr-active-config = <FF070000>`. If you want to enable it, change the value to `00000000`.
+* SIP is already enabled at OC 0.6.2
+
+## HiDPI
+* Run `install.command`, enter password and done.
 
 ## CFG-Unlock (Recommended but not highly recommended)
 * Run `modGRUBShell.efi` at OpenCore picker.
@@ -113,4 +104,4 @@ Only run these commands in Terminal and done:
 * Juan-VC for CFG-Unlock
 
 ## Support
-* Support me to buy pho and a coffee for every morning ~~or a new Broadcom wireless card~~ (´・ω・｀): [Paypal](https://www.paypal.me/tekun0lxrd)
+* Support me to buy pho and a coffee for every morning (´・ω・｀): [Paypal](https://www.paypal.me/tekun0lxrd)
