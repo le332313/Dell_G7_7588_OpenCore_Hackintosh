@@ -60,7 +60,7 @@ Follow [this guide](https://dortania.github.io/OpenCore-Post-Install/universal/i
 - Also I highly recommend you should get a new valid serial number and other SMBIOS related data for iMessage/Facetime to work. You can use [Corpnewt's GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
 
 ## Audio
-- For ALC256, I use layout-id = <21>. This id can give you 3.5mm headphone jack (just headphone!).
+- For ALC256, I use `layout-id = <21>`. This id can give you 3.5mm headphone jack (just headphone!).
 - For fixing headset jack, run the `install.sh` in `ComboJack_Lastest` folder. You can use both internal and external microphone.
 - credit: [Ivs1974](https://github.com/lvs1974/ComboJack)
 
