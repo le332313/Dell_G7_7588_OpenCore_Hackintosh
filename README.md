@@ -83,7 +83,7 @@ Only run these commands in Terminal and done:
   ```
 
 ## System Integrity Protection (SIP)
-* SIP is already enabled at OC 0.6.2
+* SIP is disabled. I hate SIP.
 
 ## HiDPI
 * Run `install.command`, enter password and done.
