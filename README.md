@@ -70,7 +70,7 @@ Follow [this guide](https://dortania.github.io/OpenCore-Post-Install/universal/i
 Since I'm using the `MacBookPro15,1` SMBIOS, macOS is expecting Touch ID to be available, causing lag on password prompts. So it can be disabled using `NoTouchID.kext`.
 
 ## Keyboard and Trackpad
-* The keyboard is PS2, so I use `VoodooPS2Controller.kext`. But I already deleted `VoodooInput.kext` and `VoodooPS2Trackpad.kext` plugin inside because of some stupid thing.
+* The keyboard is PS2, so I use `VoodooPS2Controller.kext`. But I already deleted `VoodooInput.kext` and `VoodooPS2Trackpad.kext` plugin inside because of some stupid things.
 * The trackpad is from Synaptics, but is I2C device. So it can be driven with VoodooI2C, also provides basic trackpad support. For me, I use `VoodooI2C.kext` and `VoodooI2CHID.kext`.
 
 ## Sleep/Wake Enhances
@@ -88,7 +88,8 @@ Only run these commands in Terminal and done:
 ## HiDPI
 * I recommend you should install manually. Download [Hackintool](https://github.com/headkaze/Hackintool), extract and put it to Applications
 * Run it, go to Utilities tab, click ![Disable Gatekeeper](https://cdn.discordapp.com/attachments/719556350161584179/765493559649894430/unknown.png) icon. This icon means Hackintool will disable the Gatekeeper and mount the disk in read/write mode.
-* When ![Success](https://cdn.discordapp.com/attachments/719556350161584179/765493356984926249/unknown.png) shows up, it means successful. Now go to `/System/Library/Displays/Contents/Resources/Overrides/`, rename the current `Icons.plist` to another name, like `IconsBackup.plist`. Then, copy `DisplayVendorID-30e4` folder and `Icons.plist` to `Overrides` folder. If everything is okay, restart your laptop to take effect.
+* When ![Success](https://cdn.discordapp.com/attachments/719556350161584179/765493356984926249/unknown.png) shows up, it means successful. Now go to `/System/Library/Displays/Contents/Resources/Overrides/`, rename the current `Icons.plist` to another name, like `IconsBackup.plist`.
+* Copy `DisplayVendorID-30e4` folder and `Icons.plist` to `Overrides` folder. If everything is okay, restart your laptop to take effect.
 
 ## CFG-Unlock (Recommended but not highly recommended)
 * Run `modGRUBShell.efi` at OpenCore picker.
