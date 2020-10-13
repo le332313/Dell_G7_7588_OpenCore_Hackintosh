@@ -69,9 +69,9 @@ Follow [this guide](https://dortania.github.io/OpenCore-Post-Install/universal/i
 ## Touch ID/Goodix Fingerprint Sensor
 Since I'm using the `MacBookPro15,1` SMBIOS, macOS is expecting Touch ID to be available, causing lag on password prompts. So it can be disabled using `NoTouchID.kext`.
 
-## Trackpad
-- The trackpad is from Synaptics, also is I2C device. So it can be driven with VoodooI2C. VoodooPS2Controller also provides basic trackpad support.
-For me, I used `VoodooI2C.kext`, `VoodooI2CHID.kext` and `VoodooPS2Controller.kext`.
+## Keyboard and Trackpad
+* The keyboard is PS2, so I use `VoodooPS2Controller.kext`. But I already deleted `VoodooInput.kext` and `VoodooPS2Trackpad.kext` plugin inside because of some stupid thing.
+* The trackpad is from Synaptics, but is I2C device. So it can be driven with VoodooI2C, also provides basic trackpad support. For me, I use `VoodooI2C.kext` and `VoodooI2CHID.kext`.
 
 ## Sleep/Wake Enhances
 Only run these commands in Terminal and done:
@@ -86,7 +86,9 @@ Only run these commands in Terminal and done:
 * SIP is disabled. I hate SIP.
 
 ## HiDPI
-* Run `install.command`, enter password and done.
+* I recommend you should install manually. Download [Hackintool](https://github.com/headkaze/Hackintool), extract and put it to Applications
+* Run it, go to Utilities tab, click ![Disable Gatekeeper](https://cdn.discordapp.com/attachments/719556350161584179/765489794729771018/unknown.png) icon. This icon means Hackintool will disable the Gatekeeper and mount the disk in read/write mode.
+* When ![Success](https://cdn.discordapp.com/attachments/719556350161584179/765491508916256798/unknown.png) shows up, it means successful. Now go to `/System/Library/Displays/Contents/Resources/Overrides/`, rename the current `Icons.plist` to another name, like `IconsBackup.plist`. Then, copy `DisplayVendorID-30e4` folder and `Icons.plist` to `Overrides` folder. If everything is okay, restart your laptop to take effect.
 
 ## CFG-Unlock (Recommended but not highly recommended)
 * Run `modGRUBShell.efi` at OpenCore picker.
