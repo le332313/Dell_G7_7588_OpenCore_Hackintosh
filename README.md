@@ -1,4 +1,5 @@
 # Dell_G7_7588_OpenCore_Hackintosh
+## Great new: I just updated a new EFI folder for upgrading to Big Sur Beta. If you are using a Broadcom wifi card, remmeber to disable AirportBrcm4360_Injector.kext and set its MaxKernel is 19.9.9. Credit [here](https://github.com/acidanthera/AirportBrcmFixup/blob/master/README.md#please-pay-attention)
 ## Overview
 - Lastest macOS Catalina 10.15.7
 - Bootloader: OpenCore 0.6.2
