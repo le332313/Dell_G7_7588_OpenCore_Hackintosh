@@ -1,7 +1,7 @@
 # Dell_G7_7588_OpenCore_Hackintosh
 ## **Great new: I just updated a new EFI folder for upgrading to Big Sur Beta. If you are using a Broadcom wifi card, remmeber to disable AirportBrcm4360_Injector.kext and set its MaxKernel is 19.9.9. Credit [here](https://github.com/acidanthera/AirportBrcmFixup/blob/master/README.md#please-pay-attention)**
 ## Overview
-- Lastest macOS Catalina 10.15.7
+- Lastest macOS Catalina 10.15.7 (can update to Big Sur Beta 10 with Beta folder)
 - Bootloader: OpenCore 0.6.2
 - EFI folder can be used both for USB Installer and booting.
 ## Hardware configuration
@@ -11,9 +11,9 @@
   - Display: 1080p
   - SSD: 
       * M.2 SATA Kingston SM2280S3G2120G 120Gb for macOS
-      * 2.5 inch SATAIII Crucial CT500MX500SSD1 500Gb for Windows 10 and DATAs
+      * 2.5 inch SATAIII Crucial CT500MX500SSD1 500Gb for Windows 10 and data
   - Sound: ALC256
-  - Wireless + Bluetooth: Replaced with BCM94352Z aka DW1560 ʕ •ᴥ•ʔゝ☆
+  - Wireless + Bluetooth: Replaced with BCM94352Z aka DW1560
   - VGA: Nvidia GTX 1050Ti (disabled)
   - BIOS: 1.14.0 (latest)
   
@@ -61,7 +61,7 @@ Follow [this guide](https://dortania.github.io/OpenCore-Post-Install/universal/i
 
 ## Audio
 - For ALC256, I use `layout-id = <21>`. This id can give you 3.5mm headphone jack (just headphone!).
-- For fixing headset jack, run the `install.sh` in `ComboJack_Lastest` folder. You can use both internal and external microphone.
+- For fixing headset jack, run the `install.sh` in `AudioJackFixup` folder. You can use the external microphone.
 - credit: [Ivs1974](https://github.com/lvs1974/ComboJack)
 
 ## Thunderbolt 3
