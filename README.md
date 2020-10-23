@@ -1,7 +1,6 @@
 # Dell_G7_7588_OpenCore_Hackintosh
-## **Great new: I just updated a new EFI folder for upgrading to Big Sur Beta. If you are using a Broadcom wifi card, remmeber to disable AirportBrcm4360_Injector.kext and set its MaxKernel is 19.9.9. Credit [here](https://github.com/acidanthera/AirportBrcmFixup/blob/master/README.md#please-pay-attention)**
 ## Overview
-- Lastest macOS Catalina 10.15.7 (can update to Big Sur Beta 10 with Beta folder)
+- Lastest macOS Catalina 10.15.7
 - Bootloader: OpenCore 0.6.2
 - EFI folder can be used both for USB Installer and booting.
 ## Hardware configuration
@@ -107,4 +106,4 @@ Only run these commands in Terminal and done:
 * Juan-VC for CFG-Unlock
 
 ## Support
-* Support me to buy pho and a coffee for every morning (´・ω・｀): [Paypal](https://www.paypal.me/tekun0lxrd)
+* Support me to top up Genesis Crystals in Genshin Impact ʕ•ᴥ•ʔ☆: [Paypal](https://www.paypal.me/tekun0lxrd)
