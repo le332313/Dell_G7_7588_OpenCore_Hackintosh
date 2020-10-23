@@ -70,7 +70,7 @@ Also there is a rename BRT6 to BRTX in `ACPI/Patch`.
 - NOTE for DW1820a user: Because the BCM94350ZAE chipset doesn't support power management correctly in macOS so needs to be disabled via property injection. You should add one more the following key for disable the apsm:
     `pci-aspm-default = 00000000`
     + You HAVE TO patch this key first. Then shutdown and plug the DW1820a. If not, you can't boot into macOS.
-    + Also, you change the `model` and `compatible` key name later
+    + Also, you change the `model` and `compatible` key name later.
     + There is another way: You can disable the `WLAN` and `Bluetooth` setting in BIOS first, go to macOS, find the VendorID and DeviceID, then patch, then restart, go BIOS, enable them, then back, then boot into macOS :^). I'm not sure about this way because I haven't tried it before *teehee
 
 ## iMessages and Facetime
