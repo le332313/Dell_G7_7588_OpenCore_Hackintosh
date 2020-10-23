@@ -177,7 +177,7 @@
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
-				<data>AAA=</data>
+				<data>AA==</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -203,7 +203,7 @@
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
-				<data>AAA=</data>
+				<data>AA==</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -229,7 +229,7 @@
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
-				<data>AAA=</data>
+				<data>AA==</data>
 			</dict>
 		</array>
 		<key>Quirks</key>
@@ -1056,7 +1056,7 @@
 			<key>BootProtect</key>
 			<string>Bootstrap</string>
 			<key>DmgLoading</key>
-			<string>Signed</string>
+			<string>Disabled</string>
 			<key>EnablePassword</key>
 			<false/>
 			<key>ExposeSensitiveData</key>
