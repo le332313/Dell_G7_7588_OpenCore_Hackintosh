@@ -46,12 +46,32 @@ The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need 
 ## Keyboard
 Brightness keys are enabled using `SSDT-BRT.aml` and two patches in `Kernel/Patch`.
 Also there is a rename BRT6 to BRTX in `ACPI/Patch`.
-  * Comment: change BRT6 to BRTX
-  * Count: 0
-  * Limit: 0
-  * Enable: Yes
-  * Find: 14204252 543602
-  * Replace: 14204252 545802
+  - Comment: change BRT6 to BRTX
+  - Count: 0
+  - Limit: 0
+  - Enable: Yes
+  - Find: 14204252 543602
+  - Replace: 14204252 545802
+
+## Wi-Fi and Bluetooth
+1. For Intel user:
+- Go `Wireless/Bluetooth Kexts` folder and copy all kexts from `Intel AC 9560` folder to `OC/Kexts`
+- I recommend you should use [ProperTree](https://github.com/corpnewt/ProperTree) to clean snapshot the `config.plist` file.
+- Set `SecureBootModel` from `Disabled` to `Default`. Intel user HAVE TO do this because of `AirportItlwm.kext`.
+2. For Broadcom user:
+- Grab all kexts from `DW1560/1820a` folder and put them to `OC/Kexts`
+- Open `config.plist`, go `DeviceProperties > Add` and add the following patch. For example, this is my DW1560 with VendorID = 0x14E4, DeviceID = 0x43B1 (You can check it from Hackintool and replace with your in `compatible` key)
+    `PciRoot(0x0)/Pci(0x1D,0x6)/Pci(0x0,0x0)`
+        `AAPL,slot-name =  WLAN`
+        `compatible = pci14e4,43b1`
+        `device_type = Airport Extreme`
+        `model = Dell DW1560 802.11ac Wireless`
+        `name = Airport`
+- NOTE for DW1820a user: Because the BCM94350ZAE chipset doesn't support power management correctly in macOS so needs to be disabled via property injection. You should add one more the following key for disable the apsm:
+    `pci-aspm-default = 00000000`
+    + You HAVE TO patch this key first, then shutdown plug the DW1820a later. If not, you can't boot into macOS.
+    + Also, you change the `model` and `compatible` key name later
+    + There is another way: You can disable the `WLAN` and `Bluetooth` setting in BIOS first, go to macOS, find the VendorID and DeviceID, then patch, then restart, go BIOS, enable them, then back, then boot into macOS :^). I'm not sure about this way because I haven't tried it before *teehee
 
 ## iMessages and Facetime
 Follow [this guide](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html) from Dortania.
