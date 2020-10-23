@@ -61,12 +61,12 @@ Also there is a rename BRT6 to BRTX in `ACPI/Patch`.
 2. For Broadcom user:
 - Grab all kexts from `DW1560/1820a` folder and put them to `OC/Kexts`
 - Open `config.plist`, go `DeviceProperties > Add` and add the following patch. For example, this is my DW1560 with VendorID = 0x14E4, DeviceID = 0x43B1 (You can check it from Hackintool and replace with your in `compatible` key)
-    `PciRoot(0x0)/Pci(0x1D,0x6)/Pci(0x0,0x0)`
-    * `AAPL,slot-name =  WLAN`
-    * `compatible = pci14e4,43b1`
-    * `device_type = Airport Extreme`
-    * `model = Dell DW1560 802.11ac Wireless`
-    * `name = Airport`
+    * `PciRoot(0x0)/Pci(0x1D,0x6)/Pci(0x0,0x0)`
+        * `AAPL,slot-name =  WLAN`
+        * `compatible = pci14e4,43b1`
+        * `device_type = Airport Extreme`
+        * `model = Dell DW1560 802.11ac Wireless`
+        * `name = Airport`
 - NOTE for DW1820a user: Because the BCM94350ZAE chipset doesn't support power management correctly in macOS so needs to be disabled via property injection. You should add one more the following key for disable the apsm:
     `pci-aspm-default = 00000000`
     + You HAVE TO patch this key first, then shutdown plug the DW1820a later. If not, you can't boot into macOS.
