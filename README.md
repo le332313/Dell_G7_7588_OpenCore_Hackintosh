@@ -43,8 +43,8 @@ The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need 
     * `framebuffer-con3-preferred-lspcon-mode = <01000000>`
 * credit patch: [bavariancake's XPS 9570 repo](https://github.com/bavariancake/XPS9570-macOS#enabling-external-display-support).
 
-## Keyboard
-Brightness keys are enabled using `SSDT-BRT.aml` and two patches in `Kernel/Patch`.
+## Brightness
+Brightness slider and brightness keys are enabled using `SSDT-PNLF-BRT6.aml`.
 Also there is a rename BRT6 to BRTX in `ACPI/Patch`.
   - Comment: change BRT6 to BRTX
   - Count: 0
