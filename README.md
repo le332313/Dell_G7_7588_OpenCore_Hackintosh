@@ -1,7 +1,8 @@
 # Dell_G7_7588_OpenCore_Hackintosh
+## Good new: There is an EFI folder created for Big Sur 11.0.1 Beta and can boot smoothy. You can use it. Both OpenCore and Clover :)
 ## Overview
-- Lastest macOS Catalina 10.15.7
-- Bootloader: OpenCore 0.6.2
+- Lastest macOS Catalina 10.15.7 (also a folder for Big Sur 11.0.1 Beta)
+- Bootloader: OpenCore 0.6.3
 - EFI folder can be used both for USB Installer and booting.
 ## Hardware configuration
 * Dell G7 7588
@@ -90,17 +91,21 @@ Follow [this guide](https://dortania.github.io/OpenCore-Post-Install/universal/i
 Since I'm using the `MacBookPro15,1` SMBIOS, macOS is expecting Touch ID to be available, causing lag on password prompts. So it can be disabled using `NoTouchID.kext`.
 
 ## Keyboard and Trackpad
-* The keyboard is PS2, so I use `VoodooPS2Controller.kext`. But I already deleted `VoodooInput.kext` and `VoodooPS2Trackpad.kext` plugin inside because of some stupid things.
-* The trackpad is from Synaptics, but is I2C device. So it can be driven with VoodooI2C, also provides basic trackpad support. For me, I use `VoodooI2C.kext` and `VoodooI2CHID.kext`.
+* The keyboard is PS2, so I use `VoodooPS2Controller.kext`. But I already deleted `VoodooInput.kext`, `VoodooPS2Trackpad.kext` and `VoodooPS2Mouse.kext` plugin inside because of some stupid things and not need.
+* The trackpad is from Synaptics, but is I2C-HID device. So it can be driven with VoodooI2C, also provides basic trackpad support. For me, I use `VoodooI2C.kext` and `VoodooI2CHID.kext`.
 
-## Sleep/Wake Enhances
-Only run these commands in Terminal and done:
-  ```
-  sudo pmset autopoweroff 0
-  sudo pmset powernap 0
-  sudo pmset standby 0
-  sudo pmset proximitywake 0
-  ```
+## Power Management, Sleep, Wake and Hibernation
+* Hibernation is not supported on a Hackintosh and everything related to it should be completely disabled. Disabling additional features prevents random wakeups while the lid is closed. After every update, these settings should be reapplied manually.
+* Run these commands in Terminal and done:
+```
+sudo pmset -a hibernatemode 0
+sudo rm -f /var/vm/sleepimage
+sudo mkdir /var/vm/sleepimage
+sudo pmset -a standby 0
+sudo pmset -a autopoweroff 0
+sudo pmset -a powernap 0
+sudo pmset -a proximitywake 0
+```
 
 ## System Integrity Protection (SIP)
 * SIP is disabled. I hate SIP.
@@ -111,7 +116,7 @@ Only run these commands in Terminal and done:
 * When ![Success](https://cdn.discordapp.com/attachments/719556350161584179/765493356984926249/unknown.png) shows up, it means successful. Now go to `/System/Library/Displays/Contents/Resources/Overrides/`, rename the current `Icons.plist` to another name, like `IconsBackup.plist`.
 * Copy `DisplayVendorID-30e4` folder and `Icons.plist` to `Overrides` folder. If everything is okay, restart your laptop to take effect.
 
-## CFG-Unlock (Recommended but not highly recommended)
+## CFG-Unlock (Highly recommended)
 * Run `modGRUBShell.efi` at OpenCore picker.
 * When `> grub` show up, type `setup_var 0x5BD 0x00` and hit Enter.
 * The screen will show `setting offset 0x5bd to 0x00`, that done. Now you can change both `AppleCpuPmCfgLock` and `AppleXcpmCfgLock` in Kernel/Quirks from `True` to `False`.
