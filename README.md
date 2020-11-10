@@ -43,7 +43,7 @@ The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need 
     * `enable-lspcon-support = <01000000>`
     * `framebuffer-con3-has-lspcon = <01000000>`
     * `framebuffer-con3-preferred-lspcon-mode = <01000000>`
-* credit patch: [bavariancake's XPS 9570 repo](https://github.com/bavariancake/XPS9570-macOS#enabling-external-display-support).
+* credit: [bavariancake's XPS 9570 repo](https://github.com/bavariancake/XPS9570-macOS#enabling-external-display-support).
 
 ## Brightness
 Brightness slider and brightness keys are enabled using `SSDT-PNLF-BRT6.aml`.
@@ -55,30 +55,10 @@ Also there is a rename BRT6 to BRTX in `ACPI/Patch`.
   - Find: 14204252 543602
   - Replace: 14204252 545802
 
-## Wi-Fi and Bluetooth
-1. For Intel user:
-- Go `Wireless/Bluetooth Kexts` folder and copy all kexts from `Intel AC 9560` folder to `OC/Kexts`
-- I recommend you should use [ProperTree](https://github.com/corpnewt/ProperTree) to clean snapshot the `config.plist` file.
-- Set `SecureBootModel` from `Disabled` to `Default`. Intel user HAVE TO do this because of `AirportItlwm.kext`.
-2. For Broadcom user:
-- Grab all kexts from `DW1560/1820a` folder and put them to `OC/Kexts`
-- Open `config.plist`, go `DeviceProperties > Add` and add the following patch. For example, this is my DW1560 with VendorID = 0x14E4, DeviceID = 0x43B1 (You can check it from Hackintool and replace with your in `compatible` key)
-    * `PciRoot(0x0)/Pci(0x1D,0x6)/Pci(0x0,0x0)`
-        * `AAPL,slot-name =  WLAN`
-        * `compatible = pci14e4,43b1`
-        * `device_type = Airport Extreme`
-        * `model = Dell DW1560 802.11ac Wireless`
-        * `name = Airport`
-- NOTE for DW1820a user: Because the BCM94350ZAE chipset doesn't support power management correctly in macOS so needs to be disabled via property injection. You should add one more the following key for disable the apsm:
-    `pci-aspm-default = 00000000`
-    + You HAVE TO patch this key first. Then shutdown and plug the DW1820a. If not, you can't boot into macOS.
-    + Also, you change the `model` and `compatible` key name later.
-    + There is another way: You can disable the `WLAN` and `Bluetooth` setting in BIOS first, go to macOS, find the VendorID and DeviceID, then patch, then restart, go BIOS, enable them, then back, then boot into macOS :^). I'm not sure about this way because I haven't tried it before *teehee
-
 ## iMessages and Facetime
 Follow [this guide](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html) from Dortania.
 - Make sure you have to change the ROM in `PlatformInfo/Generic/ROM`.
-- Also I highly recommend you should get a new valid serial number and other SMBIOS related data for iMessage/Facetime to work. You can use [Corpnewt's GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
+- You should get a new valid serial number and other SMBIOS related data for iMessage/Facetime to work, with the SMBIOS is `MacBookPro15,1`. You can use [Corpnewt's GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
 
 ## Audio
 - For ALC256, I use `layout-id = <21>`. This id can give you 3.5mm headphone jack (just headphone!).
@@ -86,14 +66,14 @@ Follow [this guide](https://dortania.github.io/OpenCore-Post-Install/universal/i
 - credit: [Ivs1974](https://github.com/lvs1974/ComboJack)
 
 ## Thunderbolt 3
-- Thunderbolt device will work in macOS when attached prior to boot, but will lose functionality when hotplugged. So make sure you have to plug it first, then power on the laptop and boot into macOS, it will work!
+- Thunderbolt device will work in macOS when attached prior to boot, but will lose functionality when hotplugged. So make sure you have to plug it first, then power on the laptop and boot into macOS, it will be worked!
 
 ## Touch ID/Goodix Fingerprint Sensor
 * Since I'm using the `MacBookPro15,1` SMBIOS, macOS is expecting Touch ID to be available, causing lag on password prompts. So it can be disabled using `NoTouchID.kext`.
 
 ## Keyboard and Trackpad
-* The keyboard is PS2, so I use `VoodooPS2Controller.kext`. But I already deleted `VoodooInput.kext`, `VoodooPS2Trackpad.kext` and `VoodooPS2Mouse.kext` plugin inside because of some stupid things and not need.
-* The trackpad is from Synaptics, but is I2C-HID device. So it can be driven with VoodooI2C, also provides basic trackpad support. For me, I use `VoodooI2C.kext` and `VoodooI2CHID.kext`.
+* The keyboard is PS2, so I use `VoodooPS2Controller.kext`. But I have already deleted `VoodooInput.kext`, `VoodooPS2Trackpad.kext` and `VoodooPS2Mouse.kext` plugins inside because of some stupid things and not need.
+* The trackpad is from Synaptics, but it is I2C-HID device. So it can be driven with VoodooI2C, also provides basic trackpad support. For me, I use `VoodooI2C.kext` and `VoodooI2CHID.kext`.
 
 ## Power Management, Sleep, Wake and Hibernation
 * Hibernation is not supported on a Hackintosh and everything related to it should be completely disabled. Disabling additional features prevents random wakeups while the lid is closed. After every update, these settings should be reapplied manually.
@@ -110,8 +90,9 @@ sudo pmset -a proximitywake 0
 
 ## System Integrity Protection (SIP)
 * SIP is disabled. I hate SIP.
+* About Big Sur's EFI folder, I had to enable SIP because macOS can't find any beta update version if SIP is disabled.
 
-## HiDPI
+## Display Color Fix (for Catalina user, Big Sur not need)
 * I recommend you should install manually. Download [Hackintool](https://github.com/headkaze/Hackintool), extract and put it to Applications
 * Run it, go to Utilities tab, click ![Disable Gatekeeper](https://cdn.discordapp.com/attachments/719556350161584179/765493559649894430/unknown.png) icon. This icon means Hackintool will disable the Gatekeeper and mount the disk in read/write mode.
 * When ![Success](https://cdn.discordapp.com/attachments/719556350161584179/765493356984926249/unknown.png) shows up, it means successful. Now go to `/System/Library/Displays/Contents/Resources/Overrides/`, rename the current `Icons.plist` to another name, like `IconsBackup.plist`.
