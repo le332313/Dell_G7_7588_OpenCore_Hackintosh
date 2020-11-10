@@ -1,6 +1,7 @@
 # Dell_G7_7588_OpenCore_Hackintosh
 ## Good new: There is an EFI folder created for Big Sur 11.0.1 Beta and can boot smoothy. You can use it.
 ## Overview
+![screenshot](https://cdn.discordapp.com/attachments/496510149658279939/775688424719515658/Screen_Shot_2020-11-10_at_18.44.29.png)
 - Lastest macOS Catalina 10.15.7 (also a folder for Big Sur 11.0.1 Beta)
 - Bootloader: OpenCore 0.6.3
 - EFI folder can be used both for USB Installer and booting.
