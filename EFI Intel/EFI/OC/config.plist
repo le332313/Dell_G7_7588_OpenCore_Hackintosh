@@ -191,19 +191,6 @@
 				<key>model</key>
 				<string>Killer E2400 Gigabit Ethernet Controller</string>
 			</dict>
-			<key>PciRoot(0x0)/Pci(0x1D,0x6)/Pci(0x0,0x0)</key>
-			<dict>
-				<key>AAPL,slot-name</key>
-				<string>WLAN</string>
-				<key>compatible</key>
-				<string>pci14e4,43b1</string>
-				<key>device_type</key>
-				<string>Airport Extreme</string>
-				<key>model</key>
-				<string>Dell DW1560 802.11ac Wireless Adapter</string>
-				<key>name</key>
-				<string>Airport</string>
-			</dict>
 			<key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
 			<dict>
 				<key>AAPL,slot-name</key>
