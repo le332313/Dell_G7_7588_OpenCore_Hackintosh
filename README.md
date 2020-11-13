@@ -1,10 +1,13 @@
 # Dell_G7_7588_OpenCore_Hackintosh
-## Good new: There is an EFI folder created for Big Sur 11.0.1 Beta and can boot smoothy. You can use it.
+## Update Nov 13, 2020: EFI is now supported macOS Big Sur Release version build 20B29!
+
 ## Overview
-![screenshot](https://cdn.discordapp.com/attachments/496510149658279939/775688424719515658/Screen_Shot_2020-11-10_at_18.44.29.png)
-- Lastest macOS Catalina 10.15.7 (also a folder for Big Sur 11.0.1 Beta)
+![screenshot](https://cdn.discordapp.com/attachments/496510149658279939/776730491650965515/Screen_Shot_2020-11-13_at_15.47.55.png)
+- Lastest macOS Big Sur 11.0.1 Release
 - Bootloader: OpenCore 0.6.3
-- EFI folder can be used both for USB Installer and booting.
+- There are 2 EFI folders, one for Intel card user, one for DW1560 card user. They can be used both for USB Installer and booting.
+- I merged all SSDTs into one file.
+
 ## Hardware configuration
 * Dell G7 7588
   - CPU: i7-8750H
@@ -43,11 +46,11 @@ The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need 
     * `enable-lspcon-support = <01000000>`
     * `framebuffer-con3-has-lspcon = <01000000>`
     * `framebuffer-con3-preferred-lspcon-mode = <01000000>`
-* credit: [bavariancake's XPS 9570 repo](https://github.com/bavariancake/XPS9570-macOS#enabling-external-display-support).
+* credit: [bavariancake](https://github.com/bavariancake/XPS9570-macOS#enabling-external-display-support).
 
 ## Brightness
-Brightness slider and brightness keys are enabled using `SSDT-PNLF-BRT6.aml`.
-Also there is a rename BRT6 to BRTX in `ACPI/Patch`.
+Brightness slider and brightness keys are enabled using `BRT6 Method`, already in SSDT.
+Also there is a rename in `ACPI/Patch`.
   - Comment: change BRT6 to BRTX
   - Count: 0
   - Limit: 0
@@ -62,7 +65,7 @@ Follow [this guide](https://dortania.github.io/OpenCore-Post-Install/universal/i
 
 ## Audio
 - For ALC256, I use `layout-id = <21>`. This id can give you 3.5mm headphone jack (just headphone!).
-- For fixing headset jack, run the `install.sh` in `AudioJackFixup` folder. You can use the external microphone.
+- For fixing headset jack, run the `install.sh` in `AudioJack Fixup` folder. You can use the external microphone.
 - credit: [Ivs1974](https://github.com/lvs1974/ComboJack)
 
 ## Thunderbolt 3
@@ -88,18 +91,12 @@ sudo pmset -a powernap 0
 sudo pmset -a proximitywake 0
 ```
 
-## System Integrity Protection (SIP)
-* SIP is disabled. I hate SIP.
-* About Big Sur's EFI folder, I had to enable SIP because macOS can't find any beta update version if SIP is disabled.
-
-## Display Color Fix (for Catalina user, Big Sur not need)
-* I recommend you should install manually. Download [Hackintool](https://github.com/headkaze/Hackintool), extract and put it to Applications
-* Run it, go to Utilities tab, click ![Disable Gatekeeper](https://cdn.discordapp.com/attachments/719556350161584179/765493559649894430/unknown.png) icon. This icon means Hackintool will disable the Gatekeeper and mount the disk in read/write mode.
-* When ![Success](https://cdn.discordapp.com/attachments/719556350161584179/765493356984926249/unknown.png) shows up, it means successful. Now go to `/System/Library/Displays/Contents/Resources/Overrides/`, rename the current `Icons.plist` to another name, like `IconsBackup.plist`.
-* Copy `DisplayVendorID-30e4` folder and `Icons.plist` to `Overrides` folder. If everything is okay, restart your laptop to take effect.
+## System Integrity Protection (SIP) and Apple Secure Boot
+* SIP is enable.
+* About Apple Secure Boot, `DmgLoading` is set to `Signed`, and `SecureBootModel` is `j680`. For more infomation, you can check it [here](https://dortania.github.io/OpenCore-Post-Install/universal/security/applesecureboot.html).
 
 ## CFG-Unlock (Highly recommended)
-* Run `modGRUBShell.efi` at OpenCore picker.
+* Run `modGRUBShell.efi` at OpenCore menu boot screen.
 * When `> grub` show up, type `setup_var 0x5BD 0x00` and hit Enter.
 * The screen will show `setting offset 0x5bd to 0x00`, that done. Now you can change both `AppleCpuPmCfgLock` and `AppleXcpmCfgLock` in Kernel/Quirks from `True` to `False`.
 * credit: [Juan-VC](https://juan-vc.github.io/oc-g7-guide/post-installation/disable-cfg-lock.html).
