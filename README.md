@@ -23,7 +23,7 @@
   
 ## Graphics
 Integrated Intel UHD Graphics 630 support is handled by WhateverGreen, and configured in the `PciRoot(0x0)/Pci(0x2,0x0)` section of `config.plist`.
-The Nvidia GPU is not supported so it is disabled to using `SSDT-DDGPU.aml`.
+The Nvidia GPU is not supported so it is disabled in SSDT.
 The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need to be changed.
 ### Enabling acceleration
 * [config.plist](https://github.com/sn0wfL4ke98/Dell_G7_7588_OpenCore_Hackintosh/blob/master/EFI/OC/config.plist)
