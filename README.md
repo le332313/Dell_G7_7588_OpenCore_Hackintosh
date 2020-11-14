@@ -61,7 +61,7 @@ Also there is a rename in `ACPI/Patch`.
 ## iMessages and Facetime
 Follow [this guide](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html) from Dortania.
 - Make sure you have to change the ROM in `PlatformInfo/Generic/ROM`.
-- You should get a new valid serial number and other SMBIOS related data for iMessage/Facetime to work, with the SMBIOS is `MacBookPro15,1`. You can use [Corpnewt's GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
+- You should get a new valid serial number and other SMBIOS related data for iMessage/Facetime to work, with the SMBIOS is `MacBookPro15,1`. Use [Corpnewt's GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
 
 ## Audio
 - For ALC256, I use `layout-id = <21>`. This id can give you 3.5mm headphone jack (just headphone!).
