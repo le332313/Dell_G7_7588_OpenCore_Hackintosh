@@ -110,4 +110,4 @@ sudo pmset -a proximitywake 0
 * Juan-VC for CFG-Unlock
 
 ## Support
-* Support me to top up Genesis Crystals in Genshin Impact ʕ•ᴥ•ʔ☆: [Paypal](https://www.paypal.me/tekun0lxrd)
+* Support me ʕ•ᴥ•ʔ☆: [Paypal](https://www.paypal.me/tekun0lxrd)
