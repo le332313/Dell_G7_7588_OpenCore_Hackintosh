@@ -26,7 +26,7 @@ Integrated Intel UHD Graphics 630 support is handled by WhateverGreen, and confi
 The Nvidia GPU is not supported so it is disabled in SSDT.
 The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need to be changed.
 ### Enabling acceleration
-* `DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)`
+* DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)
   * `AAPL,ig-platform-id = <0900A53E>`
 ### Enabling external display support
 * Boot Arguments
