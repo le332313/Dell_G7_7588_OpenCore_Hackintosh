@@ -26,27 +26,21 @@ Integrated Intel UHD Graphics 630 support is handled by WhateverGreen, and confi
 The Nvidia GPU is not supported so it is disabled in SSDT.
 The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need to be changed.
 ### Enabling acceleration
-* [config.plist](https://github.com/sn0wfL4ke98/Dell_G7_7588_OpenCore_Hackintosh/blob/master/EFI/OC/config.plist)
-  * `DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)`
-    * `AAPL,ig-platform-id = <00009b3e>`
+* `DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)`
+  * `AAPL,ig-platform-id = <0900A53E>`
 ### Enabling external display support
-* [config.plist](https://github.com/sn0wfL4ke98/Dell_G7_7588_OpenCore_Hackintosh/blob/master/EFI/OC/config.plist)
-  * Boot Arguments
-    * `agdpmod=vit9696`
-  * `DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)`
-    * `framebuffer-patch-enable = <01000000>`
-    * `framebuffer-portcount = <04000000>`
-    * `framebuffer-con1-enable = <01000000>`
-    * `framebuffer-con1-alldata = <01050900 00040000 87010000>`
-    * `framebuffer-con2-enable = <01000000>`
-    * `framebuffer-con2-alldata = <02060900 00040000 87010000>`
-    * `framebuffer-con3-enable = <01000000>`
-    * `framebuffer-con3-alldata = <03040a00 00080000 87010000>`
-    * `enable-hdmi20 = <01000000>`
-    * `enable-lspcon-support = <01000000>`
-    * `framebuffer-con3-has-lspcon = <01000000>`
-    * `framebuffer-con3-preferred-lspcon-mode = <01000000>`
-* credit: [bavariancake](https://github.com/bavariancake/XPS9570-macOS#enabling-external-display-support).
+* Boot Arguments
+  * `agdpmod=vit9696`
+* `DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)`
+  * `framebuffer-patch-enable = <01000000>`
+  * `framebuffer-pipecount = <02000000>`
+  * `framebuffer-portcount = <02000000>`
+  * `framebuffer-con1-enable = <00040000>`
+  * `framebuffer-con1-type = <01000000>`
+  * `framebuffer-con1-alldata = <01050900 00040000 C7010000>`
+### Fixing iGPU Performance
+* `DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)`
+  * `igfxfw = <02000000>`
 
 ## Brightness
 Brightness slider and brightness keys are enabled using `BRT6 Method`, already in SSDT.
