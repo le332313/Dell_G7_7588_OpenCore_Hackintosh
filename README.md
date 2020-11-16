@@ -31,7 +31,7 @@ The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need 
 ### Enabling external display support
 * Boot Arguments
   * `agdpmod=vit9696`
-* `DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)`
+* DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)
   * `framebuffer-patch-enable = <01000000>`
   * `framebuffer-pipecount = <02000000>`
   * `framebuffer-portcount = <02000000>`
@@ -39,7 +39,7 @@ The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need 
   * `framebuffer-con1-type = <01000000>`
   * `framebuffer-con1-alldata = <01050900 00040000 C7010000>`
 ### Fixing iGPU Performance
-* `DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)`
+* DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)
   * `igfxfw = <02000000>`
 
 ## Brightness
