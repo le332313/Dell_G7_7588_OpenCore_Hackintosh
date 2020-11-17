@@ -208,55 +208,35 @@
 			<dict>
 				<key>AAPL,ig-platform-id</key>
 				<data>
-				AACbPg==
+				CQClPg==
 				</data>
 				<key>AAPL,slot-name</key>
 				<string>Built-in</string>
 				<key>device_type</key>
 				<string>Display Controller</string>
-				<key>enable-lspcon-support</key>
-				<data>
-				AQAAAA==
-				</data>
 				<key>framebuffer-con1-alldata</key>
 				<data>
-				AQUJAAAEAACHAQAA
+				AQUJAAAEAADHAQAA
 				</data>
 				<key>framebuffer-con1-enable</key>
 				<data>
 				AQAAAA==
 				</data>
-				<key>framebuffer-con2-alldata</key>
+				<key>framebuffer-con1-type</key>
 				<data>
-				AgYJAAAEAACHAQAA
-				</data>
-				<key>framebuffer-con2-enable</key>
-				<data>
-				AQAAAA==
-				</data>
-				<key>framebuffer-con3-alldata</key>
-				<data>
-				AwQKAAAIAACHAQAA
-				</data>
-				<key>framebuffer-con3-enable</key>
-				<data>
-				AQAAAA==
-				</data>
-				<key>framebuffer-con3-has-lspcon</key>
-				<data>
-				AQAAAA==
-				</data>
-				<key>framebuffer-con3-preferred-lspcon-mode</key>
-				<data>
-				AQAAAA==
+				AAQAAA==
 				</data>
 				<key>framebuffer-patch-enable</key>
 				<data>
 				AQAAAA==
 				</data>
+				<key>framebuffer-pipecount</key>
+				<data>
+				AgAAAA==
+				</data>
 				<key>framebuffer-portcount</key>
 				<data>
-				BAAAAA==
+				AgAAAA==
 				</data>
 				<key>igfxfw</key>
 				<data>
